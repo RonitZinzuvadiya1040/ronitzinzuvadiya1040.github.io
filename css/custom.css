@@ -134,18 +134,17 @@ border: 2px solid black;
 background-color: #ffffff;
 color: #000000;
 cursor: pointer;
-transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+transition: background-color 0.3s, border-color 0.3s, .1s ease-in-out 0s;
 }
 
 /* Hover effect */
 .form-container button[type="submit"]:hover {
-    border-color: rgb(255, 255, 255); /* Border color on hover */
-    background-color: #000000; /* Background color on hover */
-    color: white; /* Text color on hover */
+    transform: scale(1.10);
 }
 
 .form-container button[type="submit"]:hover svg {
-    transform: translate(50%, -50%) rotate(5deg); 
+    transform: translate(50%, -50%) rotate(5deg);
+    transition: .2s ease-in-out 0s;
 }
 
 

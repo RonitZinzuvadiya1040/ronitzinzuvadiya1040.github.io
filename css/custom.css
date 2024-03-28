@@ -127,7 +127,7 @@ textarea:focus {
 
 /* Style for submit button */
 .form-container button[type="submit"] {
-width: 30%;
+width: 25%;
 padding: 10px;
 border-radius: 50px;
 border: 2px solid black;

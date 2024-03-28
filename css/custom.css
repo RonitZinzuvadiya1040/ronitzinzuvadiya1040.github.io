@@ -100,7 +100,7 @@ background-color: #000000;
 .form-container textarea {
 width: 100%;
 padding: 10px;
-margin-bottom: 10px;
+margin-bottom: -10px;
 border-radius: 5px;
 border: 1px solid #ccc;
 box-sizing: border-box;
@@ -116,7 +116,7 @@ align-items: flex-start;
 /* Style for validation messages */
 .error-message {
 color: red;
-margin-top: 5px;
+margin-top: 1px;
 font-size: 14px;
 }
 

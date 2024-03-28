@@ -87,11 +87,11 @@ padding: 0 5px 0 5px;
 
 /* Style for form container */
 .form-container {
-max-width: 500px;
+max-width: 600px;
 margin: auto;
 padding: 20px;
 border-radius: 10px;
-background-color: #f4f4f4;
+background-color: #000000;
 }
 
 /* Style for form inputs (text and email) */
@@ -120,21 +120,37 @@ margin-top: 5px;
 font-size: 14px;
 }
 
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+}
 
 /* Style for submit button */
 .form-container button[type="submit"] {
-width: 100%;
+width: 30%;
 padding: 10px;
-border-radius: 5px;
-background-color: transparent;
-/* border: 2px solid #007bff; */
-color: #000000; /* Change color as needed */
+border-radius: 50px;
+border: 2px solid black;
+background-color: #ffffff;
+color: #000000;
 cursor: pointer;
-transition: background-color 0.3s ease, color 0.3s ease;
+transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-/* Hover effect for submit button */
+/* Hover effect */
 .form-container button[type="submit"]:hover {
-background-color: #000000; /* Change color as needed */
-color: #fff; /* Change color as needed */
+    border-color: rgb(255, 255, 255); /* Border color on hover */
+    background-color: #000000; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.form-container button[type="submit"]:hover svg {
+    transform: translate(50%, -50%) rotate(5deg); 
+}
+
+
+@media only screen and (max-width: 600px){
+    .form-container button[type="submit"] {
+        width: 50%;
+    }
 }

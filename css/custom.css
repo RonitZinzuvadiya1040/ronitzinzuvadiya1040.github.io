@@ -1,0 +1,140 @@
+.about-mf .box-shadow-full {
+padding-top: 4rem;
+padding-bottom: 4rem;
+}
+
+.about-mf .about-img {
+margin-bottom: 2rem;
+}
+
+.about-mf .about-img img {
+margin-left: 10px;
+}
+
+.skill-mf .progress {
+/* background-color: #cde1f8; */
+margin: .5rem 0 1.2rem 0;
+border-radius: 0;
+height: .7rem;
+}
+
+.skill-mf .progress .progress-bar {
+height: .7rem;
+background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+position: relative;
+font-size: 30px;
+font-weight: bold;
+color: rgb(255, 255, 255);
+overflow: hidden;
+white-space: nowrap;
+animation: typing 3s steps(20, end) infinite;
+}
+
+#typing-animation:before {
+content: "";
+/* position: absolute; */
+top: 0;
+left: 0;
+width: 0;
+height: 100%;
+background-color: #ccc;
+animation: typing-cursor 0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+from {
+width: 0;
+}
+to {
+width: 100%;
+}
+}
+
+@keyframes typing-cursor {
+from {
+width: 5px;
+}
+to {
+width: 0;
+}
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+overflow: hidden;
+transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+transform: scale(1.1);
+}
+
+.technology{
+background-color: #ffbd39;
+color: #1d1d1e;
+border-radius: 10px;
+-webkit-box-decoration-break: clone;
+box-decoration-break: clone;
+padding: 0 5px 0 5px;
+}
+
+/* Style for form container */
+.form-container {
+max-width: 500px;
+margin: auto;
+padding: 20px;
+border-radius: 10px;
+background-color: #f4f4f4;
+}
+
+/* Style for form inputs (text and email) */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+
+.form-group {
+margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+/* Style for validation messages */
+.error-message {
+color: red;
+margin-top: 5px;
+font-size: 14px;
+}
+
+
+/* Style for submit button */
+.form-container button[type="submit"] {
+width: 100%;
+padding: 10px;
+border-radius: 5px;
+background-color: transparent;
+/* border: 2px solid #007bff; */
+color: #000000; /* Change color as needed */
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for submit button */
+.form-container button[type="submit"]:hover {
+background-color: #000000; /* Change color as needed */
+color: #fff; /* Change color as needed */
+}

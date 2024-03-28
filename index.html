@@ -22,101 +22,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-	<style>
-
-	/*======================================
-	//--//-->   ABOUT
-	======================================*/
-
-	.about-mf .box-shadow-full {
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-	}
-
-	.about-mf .about-img {
-	margin-bottom: 2rem;
-	}
-
-	.about-mf .about-img img {
-	margin-left: 10px;
-	}
-
-	.skill-mf .progress {
-	/* background-color: #cde1f8; */
-	margin: .5rem 0 1.2rem 0;
-	border-radius: 0;
-	height: .7rem;
-	}
-
-	.skill-mf .progress .progress-bar {
-	height: .7rem;
-	background-color: #ffbd39;
-	}
-
-
-	/* Animation styles */
-	#typing-animation {
-	position: relative;
-	font-size: 30px;
-	font-weight: bold;
-	color: rgb(255, 255, 255);
-	overflow: hidden;
-	white-space: nowrap;
-	animation: typing 3s steps(20, end) infinite;
-	}
-
-	#typing-animation:before {
-	content: "";
-	/* position: absolute; */
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	background-color: #ccc;
-	animation: typing-cursor 0.5s ease-in-out infinite;
-	}
-
-	@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-	}
-
-	@keyframes typing-cursor {
-	from {
-		width: 5px;
-	}
-	to {
-		width: 0;
-	}
-	}
-
-
-	/* project image zoom effect */
-
-	.zoom-effect {
-	overflow: hidden;
-	transition: transform 0.3s ease-out;
-	}
-
-	.zoom-effect:hover {
-	transform: scale(1.1);
-	}
-
-	.technology{
-	background-color: #ffbd39;
-	color: #1d1d1e;
-	border-radius: 10px;
-	-webkit-box-decoration-break: clone;
-	box-decoration-break: clone;
-	padding: 0 5px 0 5px;
-	}
-
-	</style>
+    <link rel="stylesheet" href="css/custom.css">	
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">  
@@ -523,8 +429,7 @@
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Download Resume</h3>
-				  <p><a href="docs/Resume.pdf" download="docs/Resume.pdf">Download CV</a></p>
-				  
+				  <p><a href="docs/Resume.pdf" download="docs/Resume.pdf">Download CV</a></p>				  
 	          </div>
           </div>
 
@@ -533,7 +438,40 @@
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/ZNRdAm8jd2QBxVFv6" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+					<h2>Have a<span> Question?  </span> 
+						<!-- <a href="https://forms.gle/ZNRdAm8jd2QBxVFv6" class="btn btn-primary py-3 px-5">Click Here</a>  -->
+					</h2>
+
+					<div class="form-container">
+					<form id="mG61Hd" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeAtGekUVxu8KsRvCIARuPPJgTbr5RPenMfQcHIqndUMBH0ZA/formResponse">
+						<div class="form-group">
+							<label for="name" style="color: #000000;">Name</label>
+							<input type="text" id="name" name="entry.1839060484" placeholder="Enter Your Name">
+							<span id="nameError" class="error-message"></span>
+						</div>
+						
+						<div class="form-group">
+							<label for="email" style="color: #000000;">Email</label>
+							<input type="text" id="email" name="entry.1396621271" placeholder="Enter Your Email">
+							<span id="emailError" class="error-message"></span>
+						</div>
+						
+						<div class="form-group">
+							<label for="subject" style="color: #000000;">Subject</label>
+							<input type="text" id="subject" name="entry.926039872" placeholder="Subject">
+							<span id="subjectError" class="error-message"></span>
+						</div>
+					
+						<div class="form-group">
+							<label for="message" style="color: #000000;">Message</label>
+							<textarea id="message" name="entry.293670680" placeholder="Message" rows="4"></textarea>
+							<span id="messageError" class="error-message"></span>
+						</div>
+
+						<button type="submit" id="mG61Hd">Submit Form</button>
+					</form>
+					</div>
+
 				</div>
 			</div>
 				<br>
@@ -562,6 +500,68 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent default form submission behavior
+
+        // Validate name field
+        const nameField = document.getElementById('name');
+        const nameError = document.getElementById('nameError');
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        if (nameField.value.trim() === '') {
+            nameError.textContent = 'Name is required.';
+            return;
+        }
+        if (!nameRegex.test(nameField.value)) {
+            nameError.textContent = 'Name should contain only letters (upper or lower case) and spaces.';
+            return;
+        }
+        nameError.textContent = '';
+
+        // Validate email field
+        const emailField = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailField.value.trim() === '') {
+            emailError.textContent = 'Email is required.';
+            return;
+        }
+        if (!emailRegex.test(emailField.value)) {
+            emailError.textContent = 'Please enter a valid email address.';
+            return;
+        }
+        emailError.textContent = '';
+
+        // Validate subject field
+        const subjectField = document.getElementById('subject');
+        const subjectError = document.getElementById('subjectError');
+        if (subjectField.value.trim() === '') {
+            subjectError.textContent = 'Subject is required.';
+            return;
+        }
+        subjectError.textContent = '';
+
+        // Validate message field
+        const messageField = document.getElementById('message');
+        const messageError = document.getElementById('messageError');
+        if (messageField.value.trim() === '') {
+            messageError.textContent = 'Message is required.';
+            return;
+        }
+        if (messageField.value.trim().length > 500) {
+            messageError.textContent = 'Message cannot exceed 500 characters.';
+            return;
+        }
+        messageError.textContent = '';
+
+        // Perform asynchronous form submission (Replace this with your form submission logic)
+		document.getElementById('mG61Hd').submit();
+        alert('Form submitted successfully!');
+
+        document.getElementById('mG61Hd').reset(); // Reset form after submission
+		window.location.href = window.location.href;
+    });
+</script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

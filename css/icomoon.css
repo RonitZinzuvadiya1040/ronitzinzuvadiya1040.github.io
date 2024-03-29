@@ -423,8 +423,23 @@
 .icon-bar-chart-o:before {
   content: "\f080";
 }
-.icon-twitter-square:before {
+/* .icon-twitter-square:before {
   content: "\f081";
+}
+.icon-twitter:hover {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #1DA1F2;
+} */
+.fa.fa-twitter::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  content: "";
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+  background-position: center 3px;
 }
 .icon-facebook-square:before {
   content: "\f082";
@@ -461,6 +476,11 @@
 }
 .icon-linkedin-square:before {
   content: "\f08c";
+}
+.icon-linkedin:hover {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #1DA1F2;
 }
 .icon-thumb-tack:before {
   content: "\f08d";
@@ -1157,6 +1177,12 @@
 }
 .icon-instagram:before {
   content: "\f16d";
+}
+.icon-instagram:hover {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .icon-flickr:before {
   content: "\f16e";

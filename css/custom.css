@@ -118,6 +118,11 @@ align-items: flex-start;
 color: red;
 margin-top: 1px;
 font-size: 14px;
+padding-top: 5px;
+}
+
+.error {
+    display: none;
 }
 
 input[type="text"]:focus,
@@ -126,7 +131,7 @@ textarea:focus {
 }
 
 /* Style for submit button */
-.form-container button[type="submit"] {
+.form-container #submit {
 width: 25%;
 padding: 10px;
 border-radius: 50px;
@@ -137,19 +142,24 @@ cursor: pointer;
 transition: background-color 0.3s, border-color 0.3s, .1s ease-in-out 0s;
 }
 
+#submit:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 /* Hover effect */
-.form-container button[type="submit"]:hover {
+.form-container #submit:hover {
     transform: scale(1.10);
 }
 
-.form-container button[type="submit"]:hover svg {
+.form-container #submit:hover svg {
     transform: translate(50%, -50%) rotate(5deg);
     transition: .2s ease-in-out 0s;
 }
 
 
 @media only screen and (max-width: 600px){
-    .form-container button[type="submit"] {
+    .form-container #submit {
         width: 50%;
     }
     .img-fluid, .about-img{

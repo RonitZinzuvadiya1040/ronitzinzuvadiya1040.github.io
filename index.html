@@ -22,7 +22,19 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">	
+    <link rel="stylesheet" href="css/custom.css">
+	
+	<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+	</script>
+	<script src="index.js"></script>
+	<script type="text/javascript">
+	(function(){
+		emailjs.init({
+			publicKey: "paOAHP3EYrycQ_JKK",
+		});
+	})();
+	</script>
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">  
@@ -438,37 +450,35 @@
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> 
-						<!-- <a href="https://forms.gle/ZNRdAm8jd2QBxVFv6" class="btn btn-primary py-3 px-5">Click Here</a>  -->
-					</h2>
+					<h2>Have a Question?</h2>
 
 					<div class="form-container">
-					<form id="mG61Hd" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeAtGekUVxu8KsRvCIARuPPJgTbr5RPenMfQcHIqndUMBH0ZA/formResponse">
-						<div class="form-group">
+					<form>
+						<div class="form-group" >
 							<label for="name" style="color: #ffffff;">Name</label>
-							<input type="text" id="name" name="entry.1839060484" placeholder="Your Name" autocomplete="off" required>
-							<span id="nameError" class="error-message"></span>
+							<input type="text" id="name" name="name" value="" placeholder="Your Name" autocomplete="off" />
+							<span id="nameError" class="error-message error">Valid name is required!</span>
 						</div>
 						
 						<div class="form-group">
 							<label for="email" style="color: #ffffff;">Email</label>
-							<input type="email" id="email" name="entry.1396621271" placeholder="Your Email" autocomplete="off" required>
-							<span id="emailError" class="error-message"></span>
+							<input type="email" id="email" name="email" value="" placeholder="Your Email" autocomplete="off" />
+							<span id="emailError" class="error-message error">Valid email is required!</span>
 						</div>
 						
 						<div class="form-group">
 							<label for="subject" style="color: #ffffff;">Subject</label>
-							<input type="text" id="subject" name="entry.926039872" placeholder="Subject" autocomplete="off" required>
-							<span id="subjectError" class="error-message"></span>
+							<input type="text" id="subject" name="subject" value="" placeholder="Subject" autocomplete="off" />
+							<span id="subjectError" class="error-message error">Valid subject is required!</span>
 						</div>
 					
 						<div class="form-group">
 							<label for="message" style="color: #ffffff;">Message</label>
-							<textarea id="message" name="entry.293670680" placeholder="Message" rows="2" autocomplete="off" required></textarea>
-							<span id="messageError" class="error-message"></span>
+							<textarea id="message" name="message" value="" placeholder="Message" rows="2" autocomplete="off" ></textarea>
+							<span id="messageError" class="error-message error">Valid message is required!</span>
 						</div>
 
-						<button type="submit" id="mG61Hd">Submit <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 absolute top-0 left-0 transform translate-x-[-50%] translate-y-[-50%]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+						<button type="button" id="submit" onclick="sendmail()">Submit <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 absolute top-0 left-0 transform translate-x-[-50%] translate-y-[-50%]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
 							<path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path>
 						</svg></button>
 					</form>
@@ -515,67 +525,6 @@
       });
     });
   });
-  
-    document.getElementById('myForm').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent default form submission behavior
-
-        // Validate name field
-        const nameField = document.getElementById('name');
-        const nameError = document.getElementById('nameError');
-        const nameRegex = /^[a-zA-Z\s]+$/;
-        if (nameField.value.trim() === '') {
-            nameError.textContent = 'Name is required.';
-            return;
-        }
-        if (!nameRegex.test(nameField.value)) {
-            nameError.textContent = 'Name should contain only letters (upper or lower case) and spaces.';
-            return;
-        }
-        nameError.textContent = '';
-
-        // Validate email field
-        const emailField = document.getElementById('email');
-        const emailError = document.getElementById('emailError');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailField.value.trim() === '') {
-            emailError.textContent = 'Email is required.';
-            return;
-        }
-        if (!emailRegex.test(emailField.value)) {
-            emailError.textContent = 'Please enter a valid email address.';
-            return;
-        }
-        emailError.textContent = '';
-
-        // Validate subject field
-        const subjectField = document.getElementById('subject');
-        const subjectError = document.getElementById('subjectError');
-        if (subjectField.value.trim() === '') {
-            subjectError.textContent = 'Subject is required.';
-            return;
-        }
-        subjectError.textContent = '';
-
-        // Validate message field
-        const messageField = document.getElementById('message');
-        const messageError = document.getElementById('messageError');
-        if (messageField.value.trim() === '') {
-            messageError.textContent = 'Message is required.';
-            return;
-        }
-        if (messageField.value.trim().length > 500) {
-            messageError.textContent = 'Message cannot exceed 500 characters.';
-            return;
-        }
-        messageError.textContent = '';
-
-        // Perform asynchronous form submission (Replace this with your form submission logic)
-		document.getElementById('mG61Hd').submit();
-        alert('Form submitted successfully!');
-
-        document.getElementById('mG61Hd').reset(); // Reset form after submission
-		window.location.href = window.location.href;
-    });
 </script>
 
   <script src="js/jquery.min.js"></script>

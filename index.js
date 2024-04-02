@@ -6,7 +6,7 @@ function sendmail(){
         message: document.getElementById("message")
     };
     
-    const serviceID = "service_9b63aqu";
+    const serviceID = "service_4bf1ic3";
     const templateID = "template_tkczt5r";
 
     let hasError = false;

@@ -99,13 +99,24 @@ function closeAlert() {
 
 function updateNavbarToggle() {
     var navbarToggler = document.querySelector('.navbar-toggler');
-    
-    if (window.innerWidth <= 768) { // Adjust the width as needed
-      navbarToggler.classList.remove('navbar-toggler');
-    } else {
-      navbarToggler.classList.add('navbar-toggler');
+    var currentWidth = window.innerWidth;
+    var previousWidth = updateNavbarToggle.previousWidth || currentWidth; // Initialize previousWidth if not set
+
+    if (Math.abs(currentWidth - previousWidth) > 1) {
+        if (navbarToggler) {
+            if (currentWidth <= 768) { // Adjust the width as needed
+                navbarToggler.classList.remove('navbar-toggler');
+            } else {
+                navbarToggler.classList.add('navbar-toggler');
+            }
+        }
+
+        updateNavbarToggle.previousWidth = currentWidth; // Update previousWidth
     }
 }
+
+// Call the function initially and add an event listener for window resize
+updateNavbarToggle();
 
 // Call the function initially and on window resize
 window.addEventListener('load', updateNavbarToggle);

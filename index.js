@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.getElementById('ftco-navbar');
+    const toggleBtn = document.getElementById('nav-button');
+
+    document.addEventListener('click', function(event) {
+        if (!nav.contains(event.target) && event.target !== toggleBtn) {
+            const navCollapse = nav.querySelector('.navbar-collapse');
+            if (navCollapse.classList.contains('show')) {
+                toggleBtn.click(); // Simulate a click to close the navbar
+            }
+        }
+    });
+});
+
 function sendmail(){
     var params = {
         name: document.getElementById("name"),

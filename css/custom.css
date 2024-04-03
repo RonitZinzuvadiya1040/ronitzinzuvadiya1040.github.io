@@ -166,16 +166,29 @@ textarea:focus {
     transition: .2s ease-in-out 0s;
 }
   
-  
+/* Style for mobile view */  
 @media only screen and (max-width: 600px) {
     .form-container #submit {
       width: 50%;
-}
-  
-.img-fluid,
-.about-img {
-      max-width: 50%;
     }
+}
+
+/* Style for tablet view */
+@media (max-width: 991.98px){
+    .owl-carousel.home-slider .slider-item .slider-text .one-third{
+        width: 100%;
+        z-index: 0;
+        display: none !important; /* Override conflicting styles */
+    }
+    
+    .img-fluid,
+    .about-img {
+        max-width: 74%;
+    }
+
+    .form-container #submit {
+        width: 50%;
+      }
 }
   
 #nav-button {

@@ -79,23 +79,34 @@ function sendmail(){
                 document.getElementById("subject").value = "";
                 document.getElementById("message").value = "";
     
-                // console.log(res);
-                alert("Your message sent successfully!");
+                showAlert(); // Show the alert box
             }
         )
         .catch((err) => console.log(err));
     }
 }
 
+// Custom alert message on form submit
+function showAlert() {
+    var alertBox = document.getElementById("alertBox");
+    alertBox.style.display = "block";
+}
+  
+function closeAlert() {
+    var alertBox = document.getElementById("alertBox");
+    alertBox.style.display = "none";
+}
+
 function updateNavbarToggle() {
     var navbarToggler = document.querySelector('.navbar-toggler');
+    
     if (window.innerWidth <= 768) { // Adjust the width as needed
       navbarToggler.classList.remove('navbar-toggler');
     } else {
       navbarToggler.classList.add('navbar-toggler');
     }
-  }
+}
 
-  // Call the function initially and on window resize
-  window.addEventListener('load', updateNavbarToggle);
-  window.addEventListener('resize', updateNavbarToggle);
+// Call the function initially and on window resize
+window.addEventListener('load', updateNavbarToggle);
+window.addEventListener('resize', updateNavbarToggle);
